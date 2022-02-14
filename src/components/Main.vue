@@ -28,7 +28,13 @@
               src="../assets/img/fr.png"
               alt="Bandiera Francese"
           /></span>
-          <span v-else
+          <span v-else-if="film.original_language === 'es'"
+            ><img
+              class="flag"
+              src="../assets/img/es.png"
+              alt="Bandiera Spagnola"
+          /></span>
+          <span class="text-uppercase" v-else
             ><strong>{{ film.original_language }}</strong></span
           >
         </div>
@@ -49,7 +55,25 @@
               src="../assets/img/it.png"
               alt="Bandiera Italiana"
           /></span>
-          <span v-else
+          <span v-else-if="serie.original_language === 'de'"
+            ><img
+              class="flag"
+              src="../assets/img/de.png"
+              alt="Bandiera Tedesca"
+          /></span>
+          <span v-else-if="serie.original_language === 'fr'"
+            ><img
+              class="flag"
+              src="../assets/img/fr.png"
+              alt="Bandiera Francese"
+          /></span>
+          <span v-else-if="serie.original_language === 'es'"
+            ><img
+              class="flag"
+              src="../assets/img/es.png"
+              alt="Bandiera Spagnola"
+          /></span>
+          <span v-else class="text-uppercase"
             ><strong>{{ serie.original_language }}</strong></span
           >
         </div>
