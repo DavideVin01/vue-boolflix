@@ -20,7 +20,7 @@ export default {
       api_key: "d6c46c53bff219eb5ef0e2f7c5b73130",
       films: [],
       tvSeries: [],
-      placeholder: "Cerca un film o una serie tv",
+      placeholder: "Cerca un film o una serie TV",
     };
   },
   methods: {

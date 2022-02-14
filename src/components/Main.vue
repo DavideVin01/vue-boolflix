@@ -80,7 +80,7 @@
         <div>Voto: {{ serie.vote_average }}</div>
       </li>
     </ul>
-    <h2 v-else class="ms-2">Cerca un film o una serie tv</h2>
+    <h2 v-else class="ms-2">Cerca un film o una serie TV</h2>
   </main>
 </template>
 
