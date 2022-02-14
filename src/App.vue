@@ -14,6 +14,9 @@ export default {
     Header,
     Main,
   },
+  // methods: {
+  //   fetchMovies() {},
+  // },
 };
 </script>
 
