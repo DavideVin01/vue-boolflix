@@ -1,6 +1,6 @@
 <template>
   <main>
-    <ul>
+    <ul v-if="films.length && tvSeries.length">
       <h3>Film</h3>
       <li v-for="film in films" :key="film.id">
         <h5>Titolo: {{ film.title }}</h5>
@@ -22,6 +22,7 @@
         </p>
       </li>
     </ul>
+    <h2 v-else class="ms-2">Cerca un film o una serie tv</h2>
   </main>
 </template>
 
