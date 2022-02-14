@@ -5,6 +5,7 @@
       type="text"
       v-model="query"
       :placeholder="placeholder"
+      @keyup.enter="$emit('searched', query)"
     />
     <button class="btn btn-danger" @click="$emit('searched', query)">
       Cerca
