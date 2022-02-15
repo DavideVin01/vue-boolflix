@@ -25,9 +25,15 @@ export default {
   },
   methods: {
     fetchFilms(query) {
+      if (!query) {
+        this.films = [];
+        this.tvSeries = [];
+        return;
+      }
+
       const config = {
         params: {
-          query: query,
+          query,
           api_key: this.api_key,
           language: "it-IT",
         },

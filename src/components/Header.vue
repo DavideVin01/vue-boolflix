@@ -5,11 +5,9 @@
       type="text"
       v-model="query"
       :placeholder="placeholder"
-      @keyup.enter="$emit('searched', query)"
+      @keyup.enter="emitSearch(query)"
     />
-    <button class="btn btn-danger" @click="$emit('searched', query)">
-      Cerca
-    </button>
+    <button class="btn btn-danger" @click="emitSearch(query)">Cerca</button>
   </header>
 </template>
 
@@ -21,6 +19,11 @@ export default {
     return {
       query: "",
     };
+  },
+  methods: {
+    emitSearch(query) {
+      return this.$emit("searched", query);
+    },
   },
 };
 </script>
