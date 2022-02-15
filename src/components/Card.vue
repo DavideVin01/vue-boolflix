@@ -38,7 +38,7 @@ export default {
   props: ["item"],
   data() {
     return {
-      flags: ["it", "en", "fr", "es", "de"],
+      flags: ["it", "en", "fr", "es", "de", "ja", "hi", "tl"],
       totalStars: 5,
     };
   },
