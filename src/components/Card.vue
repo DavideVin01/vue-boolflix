@@ -1,6 +1,7 @@
 <template>
   <ul>
     <li>
+      <img :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="" />
       <h5>Titolo: {{ item.title || item.name }}</h5>
       <h6>Titolo originale: {{ item.original_title || item.original_name }}</h6>
       <div>
