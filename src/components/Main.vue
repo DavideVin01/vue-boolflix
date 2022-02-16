@@ -1,16 +1,22 @@
 <template>
-  <main>
-    <div class="ms-2" v-if="films.length && tvSeries.length">
+  <main class="py-2">
+    <div v-if="films.length && tvSeries.length">
       <section id="films">
-        <h3>Film</h3>
-        <Card v-for="film in films" :key="film.id" :item="film" />
+        <h3 class="black-shadow ms-3">Film</h3>
+        <div id="film-container" class="d-flex flex-wrap">
+          <Card v-for="film in films" :key="film.id" :item="film" />
+        </div>
       </section>
       <section id="tv-series">
-        <h3>Serie TV</h3>
-        <Card v-for="serie in tvSeries" :key="serie.id" :item="serie" />
+        <h3 class="black-shadow ms-3">Serie TV</h3>
+        <div id="series-container" class="d-flex flex-wrap">
+          <Card v-for="serie in tvSeries" :key="serie.id" :item="serie" />
+        </div>
       </section>
     </div>
-    <h2 v-else class="ms-2">Cerca un film o una serie TV</h2>
+    <h2 id="placeholder-title" v-else class="ms-3 black-shadow">
+      Cerca un film o una serie TV
+    </h2>
   </main>
 </template>
 
@@ -25,5 +31,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+.black-shadow {
+  filter: drop-shadow(0px 1.5px 0px #000000);
+}
 </style>

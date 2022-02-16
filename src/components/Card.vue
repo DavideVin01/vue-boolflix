@@ -1,10 +1,9 @@
 <template>
   <ul>
     <li>
-      <img
-        :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`"
-        :alt="item.title || item.name"
-      />
+      <div class="img-box">
+        <img :src="posterPath" :alt="item.title || item.name" />
+      </div>
       <h5>Titolo: {{ item.title || item.name }}</h5>
       <h6>Titolo originale: {{ item.original_title || item.original_name }}</h6>
       <div>
@@ -40,6 +39,11 @@ export default {
     return {
       flags: ["it", "en", "fr", "es", "de", "ja", "hi", "tl"],
       totalStars: 5,
+      images: {
+        baseUri: "https://image.tmdb.org/t/p/w342",
+        placeholder:
+          "https://www.altavod.com/assets/images/poster-placeholder.png",
+      },
     };
   },
   computed: {
@@ -55,17 +59,30 @@ export default {
     fullStars() {
       return this.totalStars - this.stars;
     },
+    posterPath() {
+      if (!this.item.poster_path) return this.images.placeholder;
+      return this.images.baseUri + this.item.poster_path;
+    },
   },
 };
 </script>
 
-<style>
+<style lang="scss">
 .flag {
   width: 35px;
   height: auto;
 }
+ul:hover {
+  background-color: rgba(#000, 0.5);
+}
 li {
   list-style-type: none;
+}
+.img-box {
+  width: 342px;
+}
+img:hover {
+  background-color: rgba(#000, 0.5);
 }
 .fa-star {
   color: rgb(255, 66, 66);
