@@ -1,20 +1,25 @@
 <template>
-  <ul>
+  <ul class="box">
     <li>
-      <div class="img-box">
-        <img :src="posterPath" :alt="item.title || item.name" />
+      <div class="img-box" role="button">
+        <img class="poster" :src="posterPath" :alt="item.title || item.name" />
       </div>
-      <h5>Titolo: {{ item.title || item.name }}</h5>
-      <h6>Titolo originale: {{ item.original_title || item.original_name }}</h6>
+      <h5 role="button">
+        <strong>Titolo:</strong> {{ item.title || item.name }}
+      </h5>
+      <h6>
+        <strong>Titolo originale:</strong>
+        {{ item.original_title || item.original_name }}
+      </h6>
       <div>
-        Lingua originale:
-        <img class="flag" v-if="hasFlag" :src="flagSrc" alt="" />
+        <strong>Lingua originale: </strong>
+        <img role="button" class="flag" v-if="hasFlag" :src="flagSrc" alt="" />
         <span class="text-uppercase" v-else
           ><strong>{{ item.original_language }}</strong></span
         >
       </div>
       <!-- <div>Voto: {{ this.vote_average }}</div> -->
-      <span>Voto:</span>
+      <span><strong>Voto: </strong></span>
       <span class="ms-1">
         <i
           v-for="(star, index) in stars"
@@ -68,24 +73,31 @@ export default {
 </script>
 
 <style lang="scss">
+.box {
+  width: 342px;
+  background-color: transparent;
+  margin: 20px 10px;
+}
+
 .flag {
   width: 35px;
   height: auto;
-}
-ul:hover {
-  background-color: rgba(#000, 0.5);
 }
 li {
   list-style-type: none;
 }
 .img-box {
   width: 342px;
-}
-img:hover {
-  background-color: rgba(#000, 0.5);
+  min-height: 513px;
 }
 .fa-star {
   color: rgb(255, 66, 66);
   filter: drop-shadow(0px 5px 2px rgba(0 0 0 / 0.1));
+}
+
+.poster {
+  width: 342px;
+  height: 513px;
+  margin-bottom: 10px;
 }
 </style>
